@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ChallengesWithTestsMark8
 {
