@@ -15,20 +15,12 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
-        }
-
-            if (sum % 2 == 0) return false;
-            return true;
+            return numbers == null ? false : numbers.Sum(x => x % 2 != 0 ? x : 0) % 2 != 0;
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
             return password.Any(char.IsUpper) && password.Any(char.IsLower) && password.Any(char.IsNumber);
-        }
-
-            if (upper == true && lower == true && number == true) return true;
-            return false;
         }
 
         public char GetFirstLetterOfString(string val)
