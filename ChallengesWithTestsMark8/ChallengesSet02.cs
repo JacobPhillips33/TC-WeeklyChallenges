@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ChallengesWithTestsMark8
 {
@@ -8,103 +10,52 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            if (Char.IsLetter(c)) return true;
-            return false;
+            return Char.IsLetter(c);
         }
         
         public bool CountOfElementsIsEven(string[] vals)
         {
-            int count = vals.Length;
-            if (count % 2 == 0)
-            {
-                return true;
-            }
-            return false;
+            return vals.Length % 2 == 0;
         }
 
         public bool IsNumberEven(int number)
         {
-            if (number % 2 == 0) return true;
-            return false;
+            return number % 2 == 0;
         }
 
         public bool IsNumberOdd(int num)
         {
-            if (num % 2 != 0) return true;
-            return false;
+            return num % 2 != 0;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
-        {            
-            if (numbers == null || numbers.Count() == 0)
-            {
-                return 0;
-            }
-            return numbers.Min() + numbers.Max();            
+        {
+            return numbers == null || numbers.Count() < 1 ? 0 : numbers.Min(x => x) + numbers.Max(x => x);
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            if (str1.Length < str2.Length)
-            {
-                return str1.Length;
-            }
-            return str2.Length;
+            return str1.Length <= str2.Length ? str1.Length : str2.Length;
         }
 
         public int Sum(int[] numbers)
         {
-            if (numbers == null) return 0;
-
-            int sum = 0;
-            foreach (var num in numbers)
-            {
-                sum += num;
-            }
-            return sum;
+            return numbers == null ? 0 : numbers.Sum(x => x);
         }
 
         public int SumEvens(int[] numbers)
         {
-            if (numbers == null) return 0;
-            
-            int sum = 0;
-            foreach (var num in numbers)
-            {
-                if (num % 2 == 0)
-                {
-                    sum += num;
-                }
-            }
-            return sum;
+            return numbers == null ? 0 : numbers.Sum(x => x % 2 == 0 ? x : 0);
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            if (numbers == null) return false;
-
-            int sum = 0;
-            foreach (var num in numbers)
-            {
-                sum += num;
-            }
-            if (sum % 2 != 0) return true;
-            return false;
+            return numbers == null ? false : numbers.Sum(x => x) % 2 != 0;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            if (number == null) return 0;
-
-            long count = 0;
-            for (long i = 0; i < number; i++)
-            {
-                if (i % 2 != 0)
-                {
-                    count++;
-                }                
-            }
-            return count;
+            return number == null || number < 0 ? 0 : number / 2;
         }
     }
 }

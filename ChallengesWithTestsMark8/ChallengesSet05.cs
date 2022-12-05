@@ -8,33 +8,27 @@ namespace ChallengesWithTestsMark8
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
         {
-            int answer = 0;
-            for (int i = startNumber+1; i >= startNumber; i++)
-            {                
-                if (i % n == 0)
-                {
-                    answer = i;
-                    break;
-                }
+            startNumber++;
+            while(startNumber % n != 0)
+            {
+                startNumber++;
             }
-            return answer;
+            return startNumber;
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            foreach (var company in businesses)
+            foreach (var biz in businesses)
             {
-                if (company.TotalRevenue == 0)
-                {
-                    company.Name = "CLOSED";
-                }
+                if (biz.TotalRevenue == 0) biz.Name = "CLOSED";
             }
         }
 
         public bool IsAscendingOrder(int[] numbers)
         {
-            if (numbers == null || numbers.Length < 1) return false;
-            for (int i = 0; i < numbers.Length-1; i++)
+            if(numbers == null || numbers.Length == 0) return false;
+
+            for (int i = 0; i < numbers.Length - 1; i++)
             {
                 if (numbers[i] > numbers[i+1])
                 {
@@ -46,45 +40,45 @@ namespace ChallengesWithTestsMark8
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-            if (numbers == null) return 0;
-            int sum = 0;
-            for (int i = 0; i < numbers.Length; i++)
+            if(numbers == null) return 0;
+
+            var sum = 0;
+            for (int i = 1; i < numbers.Length; i++)
             {
-                if (numbers[i] % 2 == 0)
-                {
-                    for (int j = i+1; j < numbers.Length; j++)
-                    {
-                        sum += numbers[j];
-                        break;
-                    }
-                }
+                sum += numbers[i - 1] % 2 == 0 ? numbers[i] : 0;
             }
+
             return sum;
         }
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            var joinedString = "";
             if (words == null || words.Length < 1) return "";
+
+            var sentence = "";
             foreach (var word in words)
             {
-                joinedString += $" {word.Trim()}";
-                joinedString = joinedString.Trim();
+                if (word.Any(char.IsLetter)) 
+                {
+                    sentence += word.Trim() + " ";
+                }
             }            
-            
-            if (joinedString.Length < 1) return "";
-            return $"{joinedString}.";
+
+            sentence = sentence.Trim();
+            return sentence == "" ? "" : sentence + ".";
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
-        {            
-            if (elements == null) return Array.Empty<double>();
-            var forthElementList = new List<double>();
-            for (int i = 3; i < elements.Count; i += 4)
+        {
+            var fourthElement = new List<double>();
+            if (elements == null) return fourthElement.ToArray();
+
+            for (int i = 3; i < elements.Count; i+=4)
             {
-                forthElementList.Add(elements[i]);
+                fourthElement.Add(elements[i]);
             }
-            return forthElementList.ToArray();
+
+            return fourthElement.ToArray();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
