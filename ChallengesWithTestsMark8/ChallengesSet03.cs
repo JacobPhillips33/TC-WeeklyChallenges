@@ -10,59 +10,47 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            return vals.Contains(false);
+            throw new NotImplementedException();
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            return numbers == null ? false : numbers.Sum(x => x % 2 != 0 ? x : 0) % 2 != 0;
+            throw new NotImplementedException();
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            return password.Any(char.IsUpper) && password.Any(char.IsLower) && password.Any(char.IsNumber);
+            throw new NotImplementedException();
         }
 
         public char GetFirstLetterOfString(string val)
         {
-           return val[0];
+            throw new NotImplementedException();
         }
 
         public char GetLastLetterOfString(string val)
         {
-            return val[val.Length - 1];
+            throw new NotImplementedException();
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            return divisor == 0 ? 0 : dividend / divisor;
+            throw new NotImplementedException();
         }
 
         public int LastMinusFirst(int[] nums)
         {
-            return nums[nums.Length - 1] - nums[0];
+            throw new NotImplementedException();
         }
 
         public int[] GetOddsBelow100()
         {
-            var answer = new int[100 / 2];
-            var j = 0;
-            for (int i = 1; i < 100; i+=2)
-            {
-                answer[j] = i;
-                j++;
-            }
-            return answer;
+            throw new NotImplementedException();
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            var i = 0;
-            foreach (var word in words)
-            {
-                words[i] = word.ToUpper();
-                i++;
-            }
+            throw new NotImplementedException();
         }
     }
 }
