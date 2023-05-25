@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+iUHY9G96kZVj53zs6pKAHmaUNTYJt5EGgMr+ybtdwzYNXwx7IqxLvfCem0ECat0fw52ou58DLboItPKPImRAA==",
+  "dgSpecHash": "XWfx91xnbEQpFAQE6FIlY6SUgsM0ik7J1QfBoQLPtCp9ViDNCGpluioqfh+zeotxkiykF0RxiliSFxarPrd6TQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jake\\Desktop\\Repos\\[TrueCoders Exercises]\\WeeklyChallenges\\ChallengesWithTestsMark8\\ChallengesWithTestsMark8.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/jacobphillips/Desktop/Repos/OtherProjects/TC-WeeklyChallenges/ChallengesWithTestsMark8/ChallengesWithTestsMark8.csproj",
+  "expectedPackageFiles": [
+    "/Users/jacobphillips/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "/Users/jacobphillips/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/jacobphillips/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.32/microsoft.netcore.app.host.osx-x64.3.1.32.nupkg.sha512"
+  ],
   "logs": []
 }
